@@ -32,6 +32,7 @@ function __list_git_roots --description "Print newline‑separated git repo root
 
     if test -n "$_fd"
         set roots ($_fd --hidden --follow --type f 'HEAD' $CODE_BASE 2>/dev/null \
+            | sed "s|^$CODE_BASE/||" \
             | string match -r '.+/.git/HEAD$' \
             | while read -l f
                 dirname (dirname $f)
