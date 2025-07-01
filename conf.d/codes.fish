@@ -95,7 +95,7 @@ function code-switch --description "fzf-select git repo under $CODE_BASE and cd 
         echo "No Git projects found under $CODE_BASE"; return 1
     end
 
-    set -l target (printf '%s\n' $repos | fzf --prompt 'Select project> ')
+    set -l target $CODE_BASE/(printf '%s\n' $repos | fzf --prompt 'Select project> ')
     if test -n "$target"
         cd "$target"
     end
