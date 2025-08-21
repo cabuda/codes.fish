@@ -7,6 +7,7 @@
 # 1. Persistent workspace variable (universal)
 if not set -q CODE_BASE
     set -Ux CODE_BASE $HOME/codes
+    set -Ux PYTHONPYCACHEPREFIX $HOME/.cache/pycache
 end
 
 # Ensure workspace directory exists
