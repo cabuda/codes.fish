@@ -7,4 +7,6 @@ function start_ssh_agent --description 'Start ssh-agent and add keys if not runn
     end
 end
 
-start_ssh_agent
+if test (uname) = "Darwin"
+    start_ssh_agent
+end
