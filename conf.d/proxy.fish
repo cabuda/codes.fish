@@ -1,17 +1,13 @@
 function proxy_on
-    set -Ux http_proxy "socks5h://localhost:1080"
-    set -Ux https_proxy "socks5h://localhost:1080"
-    set -Ux all_proxy "socks5h://localhost:1080"
+    set -gx http_proxy "socks5h://localhost:1080"
+    set -gx https_proxy "socks5h://localhost:1080"
+    set -gx all_proxy "socks5h://localhost:1080"
 end
 
 function proxy_off
-    set -Ue http_proxy
-    set -Ue https_proxy
-    set -Ue all_proxy
-
-    set -U http_proxy
-    set -U https_proxy
-    set -U all_proxy
+    set -e http_proxy
+    set -e https_proxy
+    set -e all_proxy
 end
 
 function proxy
